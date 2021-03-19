@@ -1,14 +1,15 @@
-export interface picOfDay {
+export interface I_picOfDay {
   copyright: string;
   date: string;
   explanation: string;
+  url: string;
   hdurl: string;
   media_type: string;
   service_version: string;
   title: string;
 }
 export interface picOfDayState {
-  picsData: picOfDay[] | [];
+  picsData: I_picOfDay[] | [];
   loading: boolean;
   error: null | string;
 }

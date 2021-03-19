@@ -8,8 +8,10 @@ const today = moment().format("YYYY-MM-DD");
 export const getAsteroids = (date = today) => {
   let inputIsCorrect = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(date);
   if (!inputIsCorrect) {
-    console.log('Pls use "YYYY-MM-DD" format for date parameter');
-    return;
+    console.log(
+      'Pls use "YYYY-MM-DD" format for date parameter, fallback to today'
+    );
+    date = today;
   }
   return async (dispatch: Dispatch<AsteroidsAction>) => {
     try {
