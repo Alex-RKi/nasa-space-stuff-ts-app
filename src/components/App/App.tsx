@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import './App.css';
 import { useAction } from '../../hooks/useAction'
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import PictureOfDay from '../PictureOfDay';
+import PictureOfDaySwiper from '../PictureOfDaySlider';
 import Asteroids from '../Asteroids';
 import Header from '../Header';
 
@@ -23,7 +23,7 @@ function App() {
         <Header />
         <Switch>
 
-          <Route path='/' exact render={(): JSX.Element => <PictureOfDay />} />
+          <Route path='/' exact render={(): JSX.Element => <PictureOfDaySwiper picsToLoad={10} />} />
           <Route path='/asteroids' exact render={(): JSX.Element => <Asteroids />} />
         </Switch>
       </Router>

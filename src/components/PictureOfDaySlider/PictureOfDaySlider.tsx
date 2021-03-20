@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
-import Swiper from 'react-id-swiper';
-import 'swiper/swiper.scss';
 import { useAction } from '../../hooks/useAction';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { I_picOfDay } from '../../store/types/picOfDay';
-import { SwiperItem } from './SwiperItem';
-import './PicturOfDaySwiper.scss'
+import { SwiperItem } from './SliderItem';
+import './PictureOfDaySlider.scss'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+SwiperCore.use([Navigation, Pagination, Scrollbar]);
 
 
 export const AsteroidsSwiper = (props: { picsToLoad: number }) => {
@@ -16,23 +19,22 @@ export const AsteroidsSwiper = (props: { picsToLoad: number }) => {
   useEffect(() => {
     //getPicOfDay(picsToLoad);
   }, [])
-  const params = {
-    slidesPerView: picsToLoad,
-    spaceBetween: 0,
-    freeMode: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: false,
-    },
-  };
+
   const createGallery = (arr: I_picOfDay[]) => {
     return arr.map((elem) => {
-      return <SwiperItem key={elem.url} {...elem} />
+      return (
+        <SwiperSlide>
+          <SwiperItem key={elem.url} {...elem} />
+        </SwiperSlide>)
     })
   }
   return (
-    <div className='swiperContainer'>
-      <Swiper {...params}>
+    <div className='slider-container'>
+      <Swiper
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+      >
         {createGallery(picsData)}
       </Swiper>
     </div>
