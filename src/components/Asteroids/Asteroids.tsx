@@ -1,4 +1,5 @@
 import React from 'react'
+import Spinner from '../Spinner'
 
 
 
@@ -6,7 +7,7 @@ export const Asteroids = () => {
 
   return (
     <div>
-      Asteroids
+      <Spinner />
     </div>
 
   )

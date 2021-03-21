@@ -6,11 +6,19 @@
   &__pic-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: rgba(20, 19, 19, 0.911);
-    min-height: 50%;
-    max-height: 50%;
+    min-height: 50vh;
+    max-height: 50vh;
     box-shadow: 0 0 1em rgba(20, 19, 19, 0.911);
     margin-bottom: 2vh;
+    .img-placeholder {
+      z-index: 3;
+      color: white;
+      text-align: center;
+      text-shadow: #FC0 1px 0 10px;
+      background-color: transparent;
+    }
     img {
       object-fit: contain;
       max-width: 100%;
@@ -22,7 +30,8 @@
     border: 1px solid green;
     p {
       margin: 15px, 20px, 15px, 20px;
-      text-align: match-parent;
+
+      font-size: 1.5vmax;
     }
   }
 }

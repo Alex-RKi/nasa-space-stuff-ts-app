@@ -1,2 +1,2 @@
-import { AsteroidsSwiper } from "./PictureOfDaySlider";
-export default AsteroidsSwiper;
+import { PictureOfDaySlider } from "./PictureOfDaySlider";
+export default PictureOfDaySlider;
