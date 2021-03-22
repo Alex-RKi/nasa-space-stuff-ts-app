@@ -1,8 +1,19 @@
 .item {
   border-left: 1px solid rgba(0, 0, 139, 0.151);
   height: 95vh;
+  &__header {
+    height: 5vh;
+    max-height: 5vh;
 
-  border: 2px dashed red;
+    .header__name {
+      display: inline-block;
+      font-size: 2vmax;
+    }
+    .header__date {
+      font-size: 1.5vmax;
+      color: rgb(131, 130, 130);
+    }
+  }
   &__pic-container {
     display: flex;
     justify-content: center;
@@ -10,13 +21,13 @@
     background-color: rgba(20, 19, 19, 0.911);
     min-height: 50vh;
     max-height: 50vh;
-    box-shadow: 0 0 1em rgba(20, 19, 19, 0.911);
+    box-shadow: 0 0 20px rgba(20, 19, 19, 0.911);
     margin-bottom: 2vh;
     .img-placeholder {
       z-index: 3;
       color: white;
       text-align: center;
-      text-shadow: #FC0 1px 0 10px;
+      text-shadow: #fc0 1px 0 10px;
       background-color: transparent;
     }
     img {
@@ -26,12 +37,29 @@
     }
   }
   &__info {
-    padding: 0, 20px, 0, 20px;
-    border: 1px solid green;
+    height: 38vh;
+    overflow-y: scroll;
     p {
-      margin: 15px, 20px, 15px, 20px;
-
-      font-size: 1.5vmax;
+      display: block;
+      overflow-y: scroll;
+      // font-size: 1.5vmax;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .info__link {
+      margin-top: 5px;
+      text-align: center;
+      bottom: 1px;
+      padding: 10px;
+      border: 1px solid grey;
+      border-radius: 0px 9px 9px 0px;
+      text-align: center;
+      button {
+        text-decoration: none;
+        color: black;
+        background-color: transparent;
+        border: none;
+      }
     }
   }
 }

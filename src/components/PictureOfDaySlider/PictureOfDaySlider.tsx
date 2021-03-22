@@ -35,8 +35,6 @@ export const PictureOfDaySlider = (props: { picsToLoad: number }) => {
   return (
     <div className='slider-container'>
       {loading ? <div className='screen'><div className='screen__spinner'><Spinner /></div></div> : null}
-
-
       <Swiper loop={true} onSlideChange={({ isEnd }) => {
         if (isEnd) {
           getPicOfDay(picsToLoad);   //!
