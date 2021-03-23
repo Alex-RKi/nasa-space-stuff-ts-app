@@ -1,3 +1,29 @@
 .header {
-  height: 5%;
+  max-height: 5vh;
+  display: flex;
+
+  border-bottom: 1px solid rgba(128, 128, 128, 0.226);
+  &__logo,
+  &__link {
+    color: black;
+    font-family: var(--font-app-nav);
+    text-decoration: none;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    padding: 0 2vmax 0 2vmax;
+    border: none;
+    border-right: 1px solid grey;
+    background: transparent;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    transition: color 0.6s, text-shadow 1.5s;
+    &:hover,
+    &--activ {
+      color: rgb(255, 244, 198);
+      text-shadow: #fc0 0 0 10px;
+      background-color: rgba(20, 19, 19, 0.911);
+      box-shadow: inset 0px -1px 5px #fc0;
+    }
+  }
 }

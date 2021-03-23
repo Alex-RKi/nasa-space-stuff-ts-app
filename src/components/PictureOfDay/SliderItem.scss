@@ -2,11 +2,12 @@
   border-left: 1px solid rgba(0, 0, 139, 0.151);
   height: 95vh;
   &__header {
+    font-family: var(--font-page-header);
     height: 5vh;
     max-height: 5vh;
-
     .header__name {
       display: inline-block;
+      padding-left: 10px;
       font-size: 2vmax;
     }
     .header__date {
@@ -37,6 +38,7 @@
     }
   }
   &__info {
+    font-family: var(--font-page-article);
     height: 38vh;
     overflow-y: scroll;
     p {

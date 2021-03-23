@@ -1,7 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+:root {
+  --font-app-nav2: "Open Sans", sans-serif;
+  --font-app-nav: "Barlow Condensed", sans-serif;
+
+  --font-page-header: "Lato", sans-serif;
+  --font-page-article: "IBM Plex Sans", sans-serif;
+  --font-calendar-date: "Barlow Condensed", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
+
 }
+

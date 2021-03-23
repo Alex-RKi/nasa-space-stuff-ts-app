@@ -34,7 +34,7 @@ export const getAsteroids = (date = today) => {
       dispatch({
         type: AsteroidsActionTypes.FETCH_ASTEROIDS_ERROR,
         payload:
-          "Can not get asteroids list from server, pls reload or try later",
+          "Can not get asteroids data from server, pls reload or try later",
       });
     }
   };

@@ -1,0 +1,16 @@
+.slider-container {
+  z-index: 1;
+  max-width: 100%;
+  min-height: 95vh;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 32% !important;
+}
+.swiper-button-prev {
+  left: 10% !important;
+}
+.swiper-button-next {
+  right: 10% !important;
+}
