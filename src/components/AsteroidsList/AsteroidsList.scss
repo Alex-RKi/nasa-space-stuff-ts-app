@@ -1,10 +1,11 @@
 .container {
   height: 100%;
-  overflow: scroll !important;
+  overflow: auto;
+
   .btn-close {
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+    right: 2em;
+    bottom: 2em;
     width: 10vw;
     height: 10vw;
     z-index: 100;
@@ -52,24 +53,41 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-
+  padding: 0em;
   &__card {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(22, 20, 20, 0.055);
-    transition: 0.3s;
+    position: relative;
+    color: black;
     width: 10em;
     height: 10em;
-    margin: 1em;
+    margin: 2em;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.61);
+    transition: 0.5s;
+
+    .card__name {
+      position: absolute;
+      text-decoration: none;
+      top: 30%;
+      left: 30%;
+      font-family: var(--font-page-article);
+      background-color: rgba(255, 255, 255, 0.219);
+      padding: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.24);
+      border-radius: 1em;
+
+      transition: 0.5s;
+    }
     &:hover {
-      background-color: rgba(88, 77, 77, 0.301);
-      box-shadow: inset 0px -1px 15px rgb(5, 5, 5);
+      width: 12em;
+      height: 12em;
+      margin: 0;
+      .card__name {
+        background-color: rgb(231, 231, 231);
+        border: none;
+        z-index: 100;
+        top: 110%;
+      }
     }
   }
 }

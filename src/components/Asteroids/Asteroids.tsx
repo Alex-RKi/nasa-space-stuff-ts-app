@@ -46,7 +46,6 @@ export const AsteroidsDateCard = (props: I_AsteroidsDateCard) => {
   const [clazz, setClazz] = useState('slide');
 
   const showList = (e: any) => {
-    console.log(e.target.className)
     let check = e.target.className?.includes('trigger');
     if (!check) return;
     if (popUp) {

@@ -9,18 +9,18 @@ interface I_Asteroid {
 
 }
 export default function AsteroidDescription(props: any) {
-  const { name, id, estimated_diameter, close_approach_data, is_potentially_hazardous_asteroid, is_sentry_object } = props;
-  const { kilometeres: { estimated_diameter_min, estimated_diameter_max } } = estimated_diameter;
-  const { close_approach_date_full, relative_velocity: { kilometers_per_second }, miss_distance: { kilometers } } = close_approach_data[0];
-
+  //const { name, id, estimated_diameter, close_approach_data, is_potentially_hazardous_asteroid, is_sentry_object } = props;
+  // const { kilometeres: { estimated_diameter_min, estimated_diameter_max } } = estimated_diameter;
+  //const { close_approach_date_full, relative_velocity: { kilometers_per_second }, miss_distance: { kilometers } } = close_approach_data[0];
+  console.log(props)
   return (
     <div className='asteroid'>
-      <header className='asteroid__header header' >
-        <div className='header__name'>name</div>
-        <div className='header__id'>id</div>
+      <header className='asteroid__name' >
+        <div className=''>name</div>
+        <div className=''>id</div>
       </header>
       <div className='asteroid__details details'>
-        <div className='details__size'>sizemin - max km</div>
+        <div className='details__size'>size estimated_diameter_min, estimated_diameter_max</div>
         <div className='details__approach'>
           <div className="approach__date">close_approach_data</div>
           <div className='approach__danger'>hazaard or sentry</div>
