@@ -6,7 +6,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Asteroids from '../Asteroids';
 import Header from '../Header';
 import PictureOfDay from '../PictureOfDay';
-import AsteroidDescription from '../AsteroidsList/AsteroidDescription';
+import AsteroidDescription from '../AsteroidDescription/AsteroidDescription';
 
 
 function App() {

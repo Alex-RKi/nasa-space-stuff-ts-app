@@ -1,4 +1,75 @@
-.list {
-  list-style: none;
-  z-index: 100;
+.container {
+  height: 100%;
+  overflow: scroll !important;
+  .btn-close {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 10vw;
+    height: 10vw;
+    z-index: 100;
+    background-color: rgba(134, 134, 134, 0.658);
+
+    clip-path: polygon(
+      20% 0%,
+      0% 20%,
+      30% 50%,
+      0% 80%,
+      20% 100%,
+      50% 70%,
+      80% 100%,
+      100% 80%,
+      70% 50%,
+      100% 20%,
+      80% 0%,
+      50% 30%
+    );
+  }
+}
+@media (min-width: 740px) {
+  .btn-close {
+    max-width: 100px;
+    max-height: 100px;
+    background-color: rgba(93, 158, 255, 0.596);
+
+    clip-path: polygon(
+      30% 50%,
+      60% 80%,
+      80% 80%,
+      80% 70%,
+      80% 60%,
+      80% 60%,
+      80% 50%,
+      80% 40%,
+      80% 40%,
+      80% 30%,
+      80% 20%,
+      60% 20%
+    ) !important;
+  }
+}
+.asteroids-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(22, 20, 20, 0.055);
+    transition: 0.3s;
+    width: 10em;
+    height: 10em;
+    margin: 1em;
+    &:hover {
+      background-color: rgba(88, 77, 77, 0.301);
+      box-shadow: inset 0px -1px 15px rgb(5, 5, 5);
+    }
+  }
 }

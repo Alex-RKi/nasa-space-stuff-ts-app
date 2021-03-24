@@ -27,29 +27,27 @@ export const Asteroids = () => {
   }
 
   return (
-      <div className='calendar'>
-        {loading ? <LoadingScreen /> : null}
-        {createAsteroidsCalendar(asteroidsList)}
-      </div>
+    <div className='calendar'>
+      {loading ? <LoadingScreen /> : null}
+      {createAsteroidsCalendar(asteroidsList)}
+    </div>
 
   )
 }
 interface I_AsteroidsDateCard {
   date: string;
   list: object;
-  // togglePopup: (event: React.MouseEvent<HTMLElement>) => void;
   togglePopup: (Dispatch<SetStateAction<boolean>>);
   popUp: boolean;
 }
 
 export const AsteroidsDateCard = (props: I_AsteroidsDateCard) => {
-
   const { date, list, togglePopup, popUp } = props;
-  const [show, toggleShow] = useState(false);
   const [clazz, setClazz] = useState('slide');
 
   const showList = (e: any) => {
-    let check = e.target.className.includes('trigger')
+    console.log(e.target.className)
+    let check = e.target.className?.includes('trigger');
     if (!check) return;
     if (popUp) {
       togglePopup(!popUp);
@@ -61,7 +59,7 @@ export const AsteroidsDateCard = (props: I_AsteroidsDateCard) => {
   }
 
   const day = moment(date).format('dd');
-  const ObjectQTY = Object.keys(list).length;
+  const AsteroidsQTY = Object.keys(list).length;
 
   return (
     <>
@@ -71,7 +69,7 @@ export const AsteroidsDateCard = (props: I_AsteroidsDateCard) => {
       <div className='calendar__date-card card trigger' onClick={(e) => showList(e)}>
         <h2 className='card__date trigger'>{date}</h2>
         <div className='card__day trigger'>{day}</div>
-        <div className='card__events trigger'>Object(s) in proximity: {ObjectQTY}</div>
+        <div className='card__events trigger'>Object(s) in proximity: {AsteroidsQTY}</div>
       </div >
     </>
   )
