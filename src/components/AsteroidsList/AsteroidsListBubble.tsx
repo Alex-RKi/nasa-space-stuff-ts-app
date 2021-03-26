@@ -16,7 +16,7 @@ export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
   useEffect(() => {
     const styleRandom = {
       borderRadius: getRandomizedBorder(),
-      backgroundImage: getRandomTextureUrl(),
+      backgroundImage: `url(${getRandomTextureUrl()})`,
       color: dangerous ? 'red' : 'black'
     }
     setStyles(styleRandom)
@@ -32,8 +32,9 @@ export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
   }
   const getRandomTextureUrl = () => {
     const rn = Math.floor(Math.random() * 10);
-    return `url(http://localhost:3000/asteroid__texture${rn}.png)`;
+    return `/asteroid__texture${rn}.png`;
   }
+
   return (
     <Link style={styles}
       className='asteroids-list__card'
