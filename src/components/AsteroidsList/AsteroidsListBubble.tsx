@@ -20,10 +20,10 @@ export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
       color: dangerous ? 'red' : 'black'
     }
     setStyles(styleRandom)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const getRandomizedBorder = () => {
-    let rand = [];
+    let rand: number[] = [];
     for (let i = 0; i <= 3; i++) {
       rand.push(Math.floor(Math.random() * 90 + 10));
     }

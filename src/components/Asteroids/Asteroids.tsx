@@ -10,10 +10,10 @@ export const Asteroids = () => {
   const { asteroidsList, loading, error } = asteroids;
   const [popUp, togglePopup] = useState(false);
 
-  const createAsteroidsCalendar = (dates: any): any => {
+  const createAsteroidsCalendar = (dates: any) => {
     return Object.keys(dates)
       .sort((dateA, dateB) => dateA.localeCompare(dateB))
-      .map((date: any): any => {
+      .map((date: string) => {
         return <AsteroidsCard
           key={date} date={date}
           list={dates[date]}
