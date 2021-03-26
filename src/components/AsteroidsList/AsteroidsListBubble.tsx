@@ -23,18 +23,16 @@ export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const getRandomizedBorder = () => {
-    let rand: number[] = [];
+    let style = "50% /"
     for (let i = 0; i <= 3; i++) {
-      rand.push(Math.floor(Math.random() * 90 + 10));
+      style += ` ${Math.floor(Math.random() * 90 + 10)}%`
     }
-    return `50% / ${rand[0]}% ${rand[1]}% 
-    ${rand[2]}% ${rand[3]}%`;
+    return style;
   }
   const getRandomTextureUrl = () => {
     const rn = Math.floor(Math.random() * 10);
     return `/asteroid__texture${rn}.png`;
   }
-
   return (
     <Link style={styles}
       className='asteroids-list__card'

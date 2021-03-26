@@ -9,8 +9,10 @@
     width: 10vw;
     height: 10vw;
     z-index: 100;
-    background-color: rgba(134, 134, 134, 0.658);
-
+    background-color: rgba(134, 134, 134, 0.808);
+    &:hover {
+      background-color: rgba(93, 158, 255, 0.849);
+    }
     clip-path: polygon(
       20% 0%,
       0% 20%,
@@ -31,8 +33,6 @@
   .btn-close {
     max-width: 100px;
     max-height: 100px;
-    background-color: rgba(93, 158, 255, 0.596);
-
     clip-path: polygon(
       30% 50%,
       60% 80%,
