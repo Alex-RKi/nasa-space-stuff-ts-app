@@ -1,3 +1,4 @@
+import React from 'react';
 import { useAction } from '../../hooks/useAction';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { I_picOfDay } from '../../store/types/picOfDay';

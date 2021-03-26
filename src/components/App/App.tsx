@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import { useAction } from '../../hooks/useAction'
@@ -22,7 +22,6 @@ function App() {
       <Router>
         <Header />
         <Switch>
-
           <Route path='/' exact render={(): JSX.Element => <PictureOfDay picsToLoad={10} />} />
           <Route path='/asteroids' exact render={(): JSX.Element => <Asteroids />} />
           <Route path='/asteroid:id' render={({ match, location }): JSX.Element => {

@@ -1,4 +1,4 @@
-import  {  useState } from 'react'
+import React, { useState } from 'react'
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import AsteroidsCard from '../AsteroidsCard';
 import LoadingScreen from '../LoadingScreen';

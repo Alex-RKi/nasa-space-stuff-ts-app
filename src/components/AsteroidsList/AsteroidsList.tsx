@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 
 import './AsteroidsList.scss';
 import AsteroidsListBubble from './AsteroidsListBubble';
@@ -10,7 +9,7 @@ interface I_AsteroidsList {
 
 export default function AsteroidsList(props: I_AsteroidsList) {
   const { list, showList } = props;
-  
+
   const createAsteroidsList = (list: any) => {
     return list.map((item: any): any => {
       const { id } = item;

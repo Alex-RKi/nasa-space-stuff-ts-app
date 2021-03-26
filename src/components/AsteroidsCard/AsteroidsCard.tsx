@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { Dispatch, SetStateAction, useState } from 'react'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import AsteroidsList from '../AsteroidsList';
 
 import './AsteroidsCard.scss';
