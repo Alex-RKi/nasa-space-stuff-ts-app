@@ -56,38 +56,4 @@
   justify-content: flex-start;
   align-items: center;
   padding: 0em;
-  &__card {
-    position: relative;
-    color: black;
-    width: 10em;
-    height: 10em;
-    margin: 2em;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.61);
-    transition: 0.5s;
-
-    .card__name {
-      position: absolute;
-      text-decoration: none;
-      top: 30%;
-      left: 30%;
-      font-family: var(--font-page-article);
-      background-color: rgba(255, 255, 255, 0.219);
-      padding: 1rem;
-      border: 1px solid rgba(0, 0, 0, 0.24);
-      border-radius: 1em;
-
-      transition: 0.5s;
-    }
-    &:hover {
-      width: 12em;
-      height: 12em;
-      margin: 0;
-      .card__name {
-        background-color: rgb(231, 231, 231);
-        border: none;
-        z-index: 100;
-        top: 110%;
-      }
-    }
-  }
 }

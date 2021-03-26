@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import { useAction } from '../../hooks/useAction'
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Asteroids from '../Asteroids';
 import Header from '../Header';
 import PictureOfDay from '../PictureOfDay';
@@ -14,7 +13,8 @@ function App() {
 
   useEffect(() => {
     getPicOfDay();
-    //getAsteroids();
+    getAsteroids();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -25,11 +25,11 @@ function App() {
 
           <Route path='/' exact render={(): JSX.Element => <PictureOfDay picsToLoad={10} />} />
           <Route path='/asteroids' exact render={(): JSX.Element => <Asteroids />} />
-          <Route path='/asteroid:id' render={({ match }): JSX.Element => {
+          <Route path='/asteroid:id' render={({ match, location }): JSX.Element => {
             const { id } = match.params;
-            return <AsteroidDescription id={id} />
+            const props = location.state;
+            return <AsteroidDescription id={id} {...props} />
           }} />
-
         </Switch>
       </Router>
     </div>
@@ -37,3 +37,4 @@ function App() {
 }
 
 export default App;
+

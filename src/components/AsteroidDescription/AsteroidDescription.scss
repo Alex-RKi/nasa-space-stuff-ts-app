@@ -1,0 +1,12 @@
+.asteroid {
+  padding: 1em;
+  width: auto;
+  font-family: var(--font-description);
+  &__name a {
+    text-decoration: none;
+    color: black;
+  }
+  &__danger--impact {
+    color: red;
+  }
+}

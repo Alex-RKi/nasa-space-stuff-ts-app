@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAction } from '../../hooks/useAction';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { I_picOfDay } from '../../store/types/picOfDay';
@@ -8,10 +7,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
-import Spinner from '../Spinner';
 import LoadingScreen from '../LoadingScreen';
-SwiperCore.use([Navigation, Pagination, Scrollbar]);
 
+SwiperCore.use([Navigation, Pagination, Scrollbar]);
 
 export const PictureOfDay = (props: { picsToLoad: number }) => {
   const { picsToLoad } = props;

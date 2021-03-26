@@ -1,0 +1,57 @@
+.asteroids-list__card {
+  position: relative;
+  color: black;
+  width: 10em;
+  height: 10em;
+  margin: 2em;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.61);
+  transition: 0.5s;
+
+  .card__bubble {
+    position: absolute;
+    text-decoration: none;
+    top: 30%;
+    left: 0%;
+    font-family: var(--font-description);
+    background-color: rgba(255, 255, 255, 0.219);
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 1em;
+    width: auto;
+    height: 30%;
+    transition: 0.5s;
+    .tag {
+      display: block;
+    }
+    .desc {
+      display: none;
+      width: 0;
+      height: 0;
+      transition: 0.8s;
+    }
+  }
+  &:hover {
+    width: 12em;
+    height: 12em;
+    margin: 0;
+    .card__bubble {
+      background-color: rgba(231, 231, 231, 0.678);
+      color: transparent;
+      height: auto;
+      width: 200%;
+      max-width: 90vw;
+      z-index: 100;
+      top: 100%;
+      left: 15%;
+      .tag {
+        display: none;
+      }
+      .desc {
+        display: block;
+        width: 100%;
+        height: auto;
+        color: black;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ReactPlayer from 'react-player';
 import './SliderItem.scss';
 import { I_picOfDay } from "../../store/types/picOfDay";
