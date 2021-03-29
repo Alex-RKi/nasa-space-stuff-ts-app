@@ -25,9 +25,9 @@ export default function AsteroidDescription(props: any) {
         {
           pageMode ?
             <a rel="noreferrer" target="_blank" href={nasa_jpl_url}>
-              <h1 className=''>{name}</h1>
+              <h1 >{name}</h1>
             </a>
-            : <h1 className=''>{name}</h1>
+            : <h1>{name}</h1>
         }
         <div className=''>ID: {id}</div>
       </header>

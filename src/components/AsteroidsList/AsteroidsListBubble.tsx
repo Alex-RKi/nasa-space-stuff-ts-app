@@ -36,7 +36,7 @@ export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
   return (
     <Link style={styles}
       className='asteroids-list__card'
-      to={{ pathname: `/asteroid:${id}`, state: { pageMod: true, ...props } }}
+      to={{ pathname: `/asteroid:${id}`, state: { pageMode: true, ...props } }}
     >
       <div className='card__bubble'>
         <div className='tag'> {name}</div>
