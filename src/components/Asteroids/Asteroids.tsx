@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import AsteroidsCard from '../AsteroidsCard';
+import ErrorNotification from '../ErrorNotification';
 import LoadingScreen from '../LoadingScreen';
 import './Asteroids.scss';
 
@@ -20,6 +21,11 @@ export const Asteroids = () => {
           togglePopup={togglePopup}
           popUp={popUp} />
       });
+  }
+  if (error) {
+    return (
+      <ErrorNotification />
+    )
   }
   return (
     <div className='calendar'>

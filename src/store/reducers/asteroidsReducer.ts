@@ -18,7 +18,12 @@ export const asteroidsReducer = (
     case AsteroidsActionTypes.FETCH_ASTEROIDS:
       return { ...state, loading: true };
     case AsteroidsActionTypes.FETCH_ASTEROIDS_SUCCESS:
-      return { ...state, loading: false, asteroidsList: action.payload };
+      return {
+        ...state,
+        loading: false,
+        asteroidsList: action.payload,
+        error: "",
+      };
     case AsteroidsActionTypes.FETCH_ASTEROIDS_ERROR:
       return { ...state, loading: false, error: action.payload };
     default:

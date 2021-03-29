@@ -14,12 +14,12 @@ export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
   const { name, id, is_potentially_hazardous_asteroid: dangerous } = props;
   const [styles, setStyles] = useState({});
   useEffect(() => {
-    const styleRandom = {
+    const bubbleStyles = {
       borderRadius: getRandomizedBorder(),
       backgroundImage: `url(${getRandomTextureUrl()})`,
       color: dangerous ? 'red' : 'black'
     }
-    setStyles(styleRandom)
+    setStyles(bubbleStyles)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const getRandomizedBorder = () => {
@@ -36,14 +36,12 @@ export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
   return (
     <Link style={styles}
       className='asteroids-list__card'
-      to={{ pathname: `/asteroid:${id}`, state: { ...props } }}
+      to={{ pathname: `/asteroid:${id}`, state: { pageMod: true, ...props } }}
     >
       <div className='card__bubble'>
-        <div className='tag'>
-          {name}
-        </div>
+        <div className='tag'> {name}</div>
         <div className='desc'>
-          <AsteroidDescription {...props} />
+          <AsteroidDescription pageMode={false} {...props} />
         </div>
 
       </div>

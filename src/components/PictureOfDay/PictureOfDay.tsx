@@ -9,6 +9,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import LoadingScreen from '../LoadingScreen';
+import ErrorNotification from '../ErrorNotification';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar]);
 
@@ -27,6 +28,11 @@ export const PictureOfDay = (props: { picsToLoad: number }) => {
     })
   }
   const slides = createSlides(picsData);
+  if (error) {
+    return (
+      <ErrorNotification />
+    )
+  }
   return (
     <div className='slider-container'>
       {loading ? <LoadingScreen /> : null}

@@ -3,8 +3,7 @@ import './AsteroidDescription.scss';
 
 
 export default function AsteroidDescription(props: any) {
-
-  const { name, id, estimated_diameter, close_approach_data, is_potentially_hazardous_asteroid, nasa_jpl_url } = props;
+  const { pageMode, name, id, estimated_diameter, close_approach_data, is_potentially_hazardous_asteroid, nasa_jpl_url } = props;
   const { meters: { estimated_diameter_min, estimated_diameter_max } } = estimated_diameter;
   const { close_approach_date_full, relative_velocity: { kilometers_per_second }, miss_distance: { kilometers } } = close_approach_data[0];
 
@@ -23,9 +22,13 @@ export default function AsteroidDescription(props: any) {
   return (
     <div className='asteroid'>
       <header className='asteroid__name' >
-        <a rel="noreferrer" target="_blank" href={nasa_jpl_url}>
-          <h1 className=''>{name}</h1>
-        </a>
+        {
+          pageMode ?
+            <a rel="noreferrer" target="_blank" href={nasa_jpl_url}>
+              <h1 className=''>{name}</h1>
+            </a>
+            : <h1 className=''>{name}</h1>
+        }
         <div className=''>ID: {id}</div>
       </header>
       <div className='asteroid__details'>

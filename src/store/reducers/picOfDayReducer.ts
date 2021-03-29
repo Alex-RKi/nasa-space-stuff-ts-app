@@ -18,7 +18,7 @@ export const picOfDayReducer = (
     case PicOfDayActionTypes.FETCH_PIC_OF_DAY:
       return { ...state, loading: true };
     case PicOfDayActionTypes.FETCH_PIC_OF_DAY_SUCCESS:
-      return { ...state, loading: false, picsData: action.payload };
+      return { ...state, loading: false, picsData: action.payload, error: '' };
     case PicOfDayActionTypes.FETCH_PIC_OF_DAY_ERROR:
       return { ...state, loading: false, error: action.payload };
     default:

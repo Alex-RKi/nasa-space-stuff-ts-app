@@ -14,34 +14,35 @@
     left: 0%;
     font-family: var(--font-description);
     background-color: rgba(255, 255, 255, 0.219);
+    background-repeat: no;
     padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.24);
     border-radius: 1em;
     width: auto;
-    height: 30%;
+    height: auto;
     transition: 0.5s;
     .tag {
       display: block;
+      transition: 1s;
     }
     .desc {
       display: none;
-      width: 0;
-      height: 0;
-      transition: 0.8s;
+      transition: 0.5s;
     }
   }
   &:hover {
     width: 12em;
     height: 12em;
     margin: 0;
+    color: black !important;
     .card__bubble {
-      background-color: rgba(231, 231, 231, 0.678);
-      color: transparent;
+      z-index: 50;
+      background-color: rgba(231, 231, 231, 0.89);
+      border: 1px solid rgba(0, 0, 0, 0.24);
       height: auto;
       width: 200%;
       max-width: 90vw;
-      z-index: 100;
-      top: 100%;
+      top: 101%;
       left: 15%;
       .tag {
         display: none;
@@ -50,7 +51,6 @@
         display: block;
         width: 100%;
         height: auto;
-        color: black;
       }
     }
   }
