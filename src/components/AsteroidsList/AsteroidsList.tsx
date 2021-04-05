@@ -9,6 +9,10 @@ interface I_AsteroidsList {
 
 export default function AsteroidsList(props: I_AsteroidsList) {
   const { list, showList } = props;
+
+ 
+
+
   const createAsteroidsList = (list: AsteroidDescriptionProps[]) => {
     return list.map((item: AsteroidDescriptionProps) => {
       const { id } = item;
