@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './AsteroidsListBubble.scss';
 import AsteroidDescription from "../AsteroidDescription";
+import { AsteroidDescriptionProps } from "../AsteroidDescription/AsteroidDescription";
 
-interface I_AsteroidsListBubble {
-  name: string;
-  id: number;
-  item: any;
-  is_potentially_hazardous_asteroid: boolean
-}
-
-export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
+export default function AsteroidsListBubble(props: AsteroidDescriptionProps) {
   const { name, id, is_potentially_hazardous_asteroid: dangerous } = props;
   const [styles, setStyles] = useState({});
+
   useEffect(() => {
     const bubbleStyles = {
       borderRadius: getRandomizedBorder(),
@@ -34,17 +29,15 @@ export default function AsteroidsListBubble(props: I_AsteroidsListBubble) {
     return `/asteroid__texture${rn}.png`;
   }
   return (
-    <Link style={styles}
+    <div style={styles}
       className='asteroids-list__card'
-      to={{ pathname: `/asteroid:${id}`, state: { pageMode: true, ...props } }}
     >
       <div className='card__bubble'>
         <div className='tag'> {name}</div>
         <div className='desc'>
-          <AsteroidDescription pageMode={false} {...props} />
+          <AsteroidDescription {...props} />
         </div>
-
       </div>
-    </Link>
+    </div>
   )
 }

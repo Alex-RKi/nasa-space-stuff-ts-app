@@ -6,6 +6,7 @@ import Asteroids from '../Asteroids';
 import Header from '../Header';
 import PictureOfDay from '../PictureOfDay';
 import AsteroidDescription from '../AsteroidDescription';
+import { AsteroidDescriptionProps } from '../AsteroidDescription/AsteroidDescription';
 
 
 function App() {
@@ -24,11 +25,6 @@ function App() {
         <Switch>
           <Route path='/' exact render={(): JSX.Element => <PictureOfDay picsToLoad={10} />} />
           <Route path='/asteroids' exact render={(): JSX.Element => <Asteroids />} />
-          <Route path='/asteroid:id' render={({ match, location }): JSX.Element => {
-            const { id } = match.params;
-            const props = location.state;
-            return <AsteroidDescription id={id} {...props} />
-          }} />
         </Switch>
       </Router>
     </div>

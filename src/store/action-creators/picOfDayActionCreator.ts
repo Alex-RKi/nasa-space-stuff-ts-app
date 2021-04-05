@@ -14,6 +14,7 @@ export const getPicOfDay = (count = 1) => {
           count: count,
         },
       });
+      console.log(response.data)
       dispatch({
         type: PicOfDayActionTypes.FETCH_PIC_OF_DAY_SUCCESS,
         payload: response.data,

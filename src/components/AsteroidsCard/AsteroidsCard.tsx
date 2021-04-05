@@ -1,15 +1,18 @@
 import moment from 'moment';
-import React, { Dispatch, SetStateAction, useState } from 'react'
+import React, { Dispatch, SetStateAction, MouseEvent, useState } from 'react'
+import { AsteroidDescriptionProps } from '../AsteroidDescription/AsteroidDescription';
 import AsteroidsList from '../AsteroidsList';
 
 import './AsteroidsCard.scss';
 
 interface I_AsteroidsCard {
   date: string;
-  list: object;
+  list: AsteroidDescriptionProps[];
   togglePopup: (Dispatch<SetStateAction<boolean>>);
   popUp: boolean;
 }
+
+
 
 export default function AsteroidsCard(props: I_AsteroidsCard) {
   const { date, list, togglePopup, popUp } = props;
@@ -21,8 +24,8 @@ export default function AsteroidsCard(props: I_AsteroidsCard) {
   })
   const AsteroidsQTY = previewList.length;
 
-  const showList = (e: any) => {
-    let check = e.target.className?.includes('trigger');
+  const showList = (e: MouseEvent<HTMLElement>) => {
+    let check = e.currentTarget.className.includes('trigger');
     if (!check) return;
     if (popUp) {
       togglePopup(!popUp);

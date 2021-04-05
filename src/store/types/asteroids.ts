@@ -1,5 +1,7 @@
+import { AsteroidDescriptionProps } from "../../components/AsteroidDescription/AsteroidDescription";
+
 export interface near_earth_objects {
-  [key: string]: any[];
+  [key: string]: AsteroidDescriptionProps[];
 }
 export interface AsteroidsState {
   asteroidsList: near_earth_objects | {};
@@ -17,7 +19,7 @@ interface FetchAsteroidsAction {
 }
 interface FetchAsteroidsSuccessAction {
   type: AsteroidsActionTypes.FETCH_ASTEROIDS_SUCCESS;
-  payload: any[];
+  payload: AsteroidDescriptionProps[];
 }
 interface FetchAsteroidsErrorAction {
   type: AsteroidsActionTypes.FETCH_ASTEROIDS_ERROR;

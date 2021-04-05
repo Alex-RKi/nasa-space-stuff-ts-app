@@ -24,7 +24,7 @@ interface FetchPicOfDayAction {
 }
 interface FetchPicOfDaySuccessAction {
   type: PicOfDayActionTypes.FETCH_PIC_OF_DAY_SUCCESS;
-  payload: any[];
+  payload: I_picOfDay[];
 }
 interface FetchPicOfDayErrorAction {
   type: PicOfDayActionTypes.FETCH_PIC_OF_DAY_ERROR;

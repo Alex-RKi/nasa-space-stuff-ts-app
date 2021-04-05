@@ -1,19 +1,18 @@
 import React from 'react'
-
 import './AsteroidsList.scss';
+import { AsteroidDescriptionProps } from '../AsteroidDescription/AsteroidDescription';
 import AsteroidsListBubble from './AsteroidsListBubble';
 interface I_AsteroidsList {
-  list: any;
+  list: AsteroidDescriptionProps[];
   showList: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 export default function AsteroidsList(props: I_AsteroidsList) {
   const { list, showList } = props;
-
-  const createAsteroidsList = (list: any) => {
-    return list.map((item: any): any => {
+  const createAsteroidsList = (list: AsteroidDescriptionProps[]) => {
+    return list.map((item: AsteroidDescriptionProps) => {
       const { id } = item;
-      return <AsteroidsListBubble key={id} id={id} {...item} />
+      return <AsteroidsListBubble key={id} {...item} />
     })
   }
   return (
